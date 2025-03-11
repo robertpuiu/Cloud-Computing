@@ -1,0 +1,16 @@
+{
+  "name": "music-library-api",
+  "version": "1.0.0",
+  "description": "RESTful API for Music Library",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "mongodb": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

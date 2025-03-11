@@ -1,0 +1,314 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+    "name": "Music Library API",
+    "description": "A collection of requests for the Music Library RESTful API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Songs",
+      "item": [
+        {
+          "name": "Get All Songs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["songs"]
+            },
+            "description": "Get a list of all songs in the library"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Song by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["songs", "{{songId}}"]
+            },
+            "description": "Get a specific song by its ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Song",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Bohemian Rhapsody\",\n    \"artist\": \"Queen\",\n    \"album\": \"A Night at the Opera\",\n    \"year\": 1975,\n    \"genre\": \"Rock\",\n    \"duration\": 354\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["songs"]
+            },
+            "description": "Create a new song in the library"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Song",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Bohemian Rhapsody (Remastered)\",\n    \"artist\": \"Queen\",\n    \"album\": \"A Night at the Opera\",\n    \"year\": 1975,\n    \"genre\": \"Rock\",\n    \"duration\": 355\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["songs", "{{songId}}"]
+            },
+            "description": "Update a specific song by its ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Song",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["songs", "{{songId}}"]
+            },
+            "description": "Delete a specific song by its ID"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing songs in the music library"
+    },
+    {
+      "name": "Playlists",
+      "item": [
+        {
+          "name": "Get All Playlists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/playlists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists"]
+            },
+            "description": "Get a list of all playlists"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Playlist by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}"]
+            },
+            "description": "Get a specific playlist by its ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Playlist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Rock Classics\",\n    \"description\": \"The best rock songs of all time\",\n    \"songs\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/playlists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists"]
+            },
+            "description": "Create a new playlist"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Playlist",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Rock Classics Updated\",\n    \"description\": \"The greatest rock songs of all time\",\n    \"songs\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}"]
+            },
+            "description": "Update a specific playlist by its ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Playlist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}"]
+            },
+            "description": "Delete a specific playlist by its ID"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing playlists"
+    },
+    {
+      "name": "Playlist Songs",
+      "item": [
+        {
+          "name": "Get All Songs in Playlist",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}", "songs"]
+            },
+            "description": "Get all songs in a specific playlist"
+          },
+          "response": []
+        },
+        {
+          "name": "Add Song to Playlist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"songId\": \"{{songId}}\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}", "songs"]
+            },
+            "description": "Add a song to a playlist"
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Song from Playlist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/playlists/{{playlistId}}/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["playlists", "{{playlistId}}", "songs", "{{songId}}"]
+            },
+            "description": "Remove a song from a playlist"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing songs in playlists"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "songId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "playlistId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
