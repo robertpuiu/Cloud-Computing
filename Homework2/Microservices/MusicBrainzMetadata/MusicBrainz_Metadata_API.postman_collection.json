@@ -1,0 +1,86 @@
+{
+  "info": {
+    "_postman_id": "efgh1234-5678-abcd-ijkl-987654321000",
+    "name": "MusicBrainz Metadata API - Minimal Data",
+    "description": "Simplified API for fetching, saving (minimal data), deleting, and listing music metadata using MusicBrainz and Music Library API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Enriched Metadata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/metadata/{{songId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["metadata", "{{songId}}"]
+        },
+        "description": "Retrieve enriched metadata (minimal relevant data) by fetching song details from the Music Library API and querying MusicBrainz."
+      },
+      "response": []
+    },
+    {
+      "name": "Save Minimal Metadata",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:4000/metadata/{{songId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["metadata", "{{songId}}"]
+        },
+        "description": "Retrieve enriched metadata and save only the minimal relevant data in the database. No request body is needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Metadata",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/metadata/{{songId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["metadata", "{{songId}}"]
+        },
+        "description": "Delete the saved metadata for a specific songId from the database."
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Saved Metadata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/metadata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["metadata"]
+        },
+        "description": "Retrieve all the metadata records saved in the database."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "songId",
+      "value": "67e2a7bfa6348db5c0323c82"
+    }
+  ]
+}

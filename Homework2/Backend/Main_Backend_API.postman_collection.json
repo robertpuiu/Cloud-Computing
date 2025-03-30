@@ -1,0 +1,214 @@
+{
+  "info": {
+    "_postman_id": "main-backend-collection-001",
+    "name": "Main Backend API",
+    "description": "API Gateway for the Frontend to communicate with the Music Library API, MusicBrainz Metadata Microservice, and Lyrics Microservice.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Songs",
+      "item": [
+        {
+          "name": "Get All Songs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "songs"]
+            },
+            "description": "Retrieve all songs from the Music Library API via the main backend."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Song by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "songs", "{{songId}}"]
+            },
+            "description": "Retrieve a song by its ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Song",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Example Song\",\n  \"artist\": \"Example Artist\",\n  \"album\": \"Example Album\",\n  \"year\": 2020,\n  \"genre\": \"Rock\",\n  \"duration\": 300\n}"
+            },
+            "url": {
+              "raw": "http://localhost:6001/api/songs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "songs"]
+            },
+            "description": "Create a new song in the Music Library API."
+          },
+          "response": []
+        },
+        {
+          "name": "Update Song",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Song Title\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:6001/api/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "songs", "{{songId}}"]
+            },
+            "description": "Update a song's information."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Song",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/songs/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "songs", "{{songId}}"]
+            },
+            "description": "Delete a song by its ID."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Metadata",
+      "item": [
+        {
+          "name": "Get All Metadata",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/metadata",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "metadata"]
+            },
+            "description": "Retrieve all saved metadata from the MusicBrainz Metadata Microservice."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Metadata by Song ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/metadata/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "metadata", "{{songId}}"]
+            },
+            "description": "Retrieve metadata for a specific song."
+          },
+          "response": []
+        },
+        {
+          "name": "Save Metadata",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:6001/api/metadata/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "metadata", "{{songId}}"]
+            },
+            "description": "Save metadata (minimal data) for a specific song."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Metadata",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/metadata/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "metadata", "{{songId}}"]
+            },
+            "description": "Delete saved metadata for a specific song."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Lyrics",
+      "item": [
+        {
+          "name": "Get Lyrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:6001/api/lyrics/{{songId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["api", "lyrics", "{{songId}}"]
+            },
+            "description": "Retrieve the lyrics for a song using its songId."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "songId",
+      "value": "67e2a7bfa6348db5c0323c82"
+    }
+  ]
+}
